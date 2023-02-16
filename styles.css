@@ -1,14 +1,14 @@
 #gridContainer{
-    background-color: rgb(4, 230, 230);
+    background-color: rgb(255, 255, 255);
     display: grid;
-    max-width: 40%;
+    height: 600px;
+    width: 600px;
 }
 
 .gridElement{
-    background-color: blue;
-/*     border-color: rgb(240, 1, 1);
+    border-color: rgb(191, 194, 194);
     border-style: solid;
-    border-width: 1px; */
-    height: 20px;
-    width: 20px;
+    border-width: 1px;
+    height: 100%;
+    width: 100%;
 }
