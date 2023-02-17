@@ -8,7 +8,17 @@
     <link rel = "stylesheet" href = "styles.css">
 </head>
 <body>
-    <div id="gridContainer"></div>
+    <div class ="contentBox" id="header">Etch-A-Sketch</div>
+    <div class ="contentBox" id="mainContent">
+        <div class ="contentBox" id="leftControls">
+            <p id="gridSizeLabel">16 x 16</p>
+            <input type="range" min="1" max="100" value="16" id="gridSize"><br>
+            <button type="button" id="redrawGrid">New Grid</button>
+        </div>
+        <div class ="contentBox" id="gridContainer"></div>
+        <div class ="contentBox" id="rightControls"></div>
+    </div>
+    <div class ="contentBox" id="footer">Page by K.Hetherington 2023</div>
     <script src="etch-a-sketch.js"></script>
 </body>
 </html>
