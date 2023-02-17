@@ -2,6 +2,8 @@ const gridContainer = document.getElementById("gridContainer");
 const gridSizeSlider = document.getElementById("gridSize");
 const redrawGridButton = document.getElementById("redrawGrid");
 const gridSizeLabel = document.getElementById("gridSizeLabel");
+let gridSize = 16;
+let colorChoice = "rgb(0, 0, 0)"
     
 gridSizeSlider.addEventListener("change" , (e)=> {
     gridSize = e.target.value;
@@ -11,8 +13,6 @@ gridSizeSlider.addEventListener("change" , (e)=> {
 redrawGridButton.addEventListener("click" , (e)=> {
     buildGrid(gridSize);
  });
-
-let gridSize = 16;
 
 function buildGrid(gridSize){
     gridContainer.innerHTML="";
@@ -31,7 +31,13 @@ function buildGrid(gridSize){
 }
 
 function colorChange(e){
-    e.target.style.backgroundColor = "black";
+    e.target.style.backgroundColor = `rgb(${randNum()}, ${randNum()}, ${randNum()})`;
+}
+
+function randNum(){
+    value = Math.floor(Math.random() * 255);
+    return value;
 }
 
 buildGrid(gridSize);
+
