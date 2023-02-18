@@ -3,6 +3,7 @@ const gridSizeSlider = document.getElementById("gridSize");
 const gridSizeLabel = document.getElementById("gridSizeLabel");
 const redrawGridButton = document.getElementById("redrawGrid");
 const colorButtons = document.querySelectorAll(".colorButton");
+const colorPicker = document.getElementById("colorPicker");
 let gridSize = 16;
 let colorChoice = "blackPen"
     
@@ -13,6 +14,10 @@ gridSizeSlider.addEventListener("change" , (e)=> {
 
 redrawGridButton.addEventListener("click" , (e)=> {
     buildGrid(gridSize);
+});
+
+colorPicker.addEventListener("click" , (e)=> {
+    colorChoice = "customPen";
 });
 
 colorButtons.forEach(btn => btn.addEventListener("click" , (e)=> {
@@ -37,15 +42,10 @@ function buildGrid(gridSize){
 }
 
 function colorChange(e){
-    if(colorChoice === "blackPen"){
-        e.target.style.backgroundColor = "rgb(0,0,0)"
-    }
-    else if(colorChoice === "rainbowPen"){
-        e.target.style.backgroundColor = `rgb(${randNum()}, ${randNum()}, ${randNum()})`
-    }
-    else if(colorChoice === "eraserPen"){
-        e.target.style.backgroundColor = "rgb(255,255,255)"
-    }
+    (colorChoice === "blackPen") ? (e.target.style.backgroundColor = "rgb(0,0,0)")
+    : (colorChoice === "rainbowPen") ? (e.target.style.backgroundColor = `rgb(${randNum()}, ${randNum()}, ${randNum()})`) 
+    : (colorChoice === "eraserPen") ? (e.target.style.backgroundColor = "rgb(255,255,255)")
+    : (colorChoice === "customPen") ? (e.target.style.backgroundColor = `${colorPicker.value}`) : null;
 }
 
 function randNum(){
