@@ -53,12 +53,13 @@ function buildGrid(gridSize){
         gridContainer.appendChild(gridElement);
         gridElement.classList.add("gridElement");
         gridElement.addEventListener("mouseover" , (e)=> colorChange(e));
+        gridElement.addEventListener("mousedown" , (e)=> colorChange(e));
         i++;
     }
 }
 
 function colorChange(e){
-    if(e.type === "mouseover" && mouseDown){
+    if((e.type === "mouseover" && mouseDown) || e.type === "mousedown"){
     (colorChoice === "blackPen") ? (e.target.style.backgroundColor = "rgb(0,0,0)") 
     : (colorChoice === "eraserPen") ? (e.target.style.backgroundColor = "rgb(255,255,255)")
     : (colorChoice === "rainbowPen") ? (e.target.style.backgroundColor = `rgb(${randNum()}, ${randNum()}, ${randNum()})`)
