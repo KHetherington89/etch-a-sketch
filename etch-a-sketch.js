@@ -41,6 +41,8 @@ colorPicker.addEventListener("change" , (e)=> {
 
 colorButtons.forEach(btn => btn.addEventListener("click" , (e)=> {
     colorChoice = e.target.id;
+    colorButtons.forEach(btn => btn.classList.remove("cbActive"));
+    e.target.classList.add("cbActive");
 }));
 
 function buildGrid(gridSize){

@@ -11,6 +11,10 @@ body{
     text-align: center;
 }
 
+.cbActive{
+    box-shadow: 0 5px 15px rgba(55, 88, 2, 0.7);
+}
+
 #colorPicker{
     height: 0px;
     visibility: hidden;
