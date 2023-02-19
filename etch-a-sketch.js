@@ -4,8 +4,18 @@ const gridSizeLabel = document.getElementById("gridSizeLabel");
 const redrawGridButton = document.getElementById("redrawGrid");
 const colorButtons = document.querySelectorAll(".colorButton");
 const colorPicker = document.getElementById("colorPicker");
+const colorPickerLabel = document.getElementById("pickerLabel");
 let gridSize = 16;
 let colorChoice = "blackPen"
+
+let mouseDown = false
+gridContainer.onmousedown = (e) => {
+    mouseDown = true;
+    e.preventDefault();
+}
+gridContainer.onmouseup = () => (mouseDown = false)
+
+pickerLabel.style.backgroundColor = `${colorPicker.value}`;
     
 gridSizeSlider.addEventListener("change" , (e)=> {
     gridSize = e.target.value;
@@ -16,21 +26,27 @@ redrawGridButton.addEventListener("click" , (e)=> {
     buildGrid(gridSize);
 });
 
+toggleGrid.addEventListener("click" , ()=> {
+    gridContainer.classList.contains("gridActive") ? gridContainer.classList.remove("gridActive") :
+                                                     gridContainer.classList.add("gridActive");
+});
+
 colorPicker.addEventListener("click" , (e)=> {
     colorChoice = "customPen";
 });
 
+colorPicker.addEventListener("change" , (e)=> {
+    pickerLabel.style.backgroundColor = `${colorPicker.value}`;
+});
+
 colorButtons.forEach(btn => btn.addEventListener("click" , (e)=> {
     colorChoice = e.target.id;
-    console.log(colorChoice);
 }));
 
 function buildGrid(gridSize){
     gridContainer.innerHTML="";
     gridContainer.style.cssText += `grid-template-columns: repeat(${gridSize}, 1fr); 
-                                    grid-template-rows: repeat(${gridSize}, 1fr);
-                                    column-gap: 1px;
-                                    row-gap: 1px;`                                   
+                                    grid-template-rows: repeat(${gridSize}, 1fr);`
     let i = 0;
     while(i<(gridSize*gridSize)){
         const gridElement = document.createElement("div");
@@ -42,10 +58,12 @@ function buildGrid(gridSize){
 }
 
 function colorChange(e){
-    (colorChoice === "blackPen") ? (e.target.style.backgroundColor = "rgb(0,0,0)")
-    : (colorChoice === "rainbowPen") ? (e.target.style.backgroundColor = `rgb(${randNum()}, ${randNum()}, ${randNum()})`) 
+    if(e.type === "mouseover" && mouseDown){
+    (colorChoice === "blackPen") ? (e.target.style.backgroundColor = "rgb(0,0,0)") 
     : (colorChoice === "eraserPen") ? (e.target.style.backgroundColor = "rgb(255,255,255)")
+    : (colorChoice === "rainbowPen") ? (e.target.style.backgroundColor = `rgb(${randNum()}, ${randNum()}, ${randNum()})`)
     : (colorChoice === "customPen") ? (e.target.style.backgroundColor = `${colorPicker.value}`) : null;
+    }
 }
 
 function randNum(){

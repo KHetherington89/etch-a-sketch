@@ -1,31 +1,111 @@
+@import url(https://fonts.googleapis.com/css?family=Sirin+Stencil);
+
+*{
+    font-family: "Sirin Stencil", sans-serif;
+}
+
 body{
     align-content: center;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     text-align: center;
 }
 
+#colorPicker{
+    height: 0px;
+    visibility: hidden;
+    width: 0px;
+}
+
 .contentBox{
-    margin-top: 40px;;
+    margin-top: 40px;
+}
+
+.controlBox{
+    align-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.fauxButton, #pickerLabel{
+    align-items: center;
+    background-color: rgb(245, 237, 192);
+    border-color: rgb(170, 3, 3);
+    border-radius: 30%;
+    border-style: ridge;
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex: 0;
+    height: 50px;
+    justify-content: center;
+    margin-top: 15px;
+    text-align: center;
+    width: 100px;    
+}
+
+.fauxButton:hover, #pickerLabel:hover{
+    box-shadow: 0 5px 15px rgba(170, 3, 3, 0.7);
+    scale: 1.2;   
 }
 
 #gridContainer{
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(145, 142, 142);
+    border-color: rgb(170, 3, 3);
+    border-style: solid;
+    border-radius: 20px;
+    border-width: 50px;
     display: grid;
+    gap: 0px;
     height: 600px;
+    margin: 30px;
     width: 600px;
 }
 
+#gridContainer.gridActive{
+    gap: 1px;
+}
+
 .gridElement{
-    border-color: rgb(191, 194, 194);
-    border-style: solid;
-    border-width: 1px;
+    background-color: white;
     height: 100%;
     width: 100%;
 }
 
-#mainContent{
-    justify-content: center;
+#gridSizeLabel{
+    font-size: 2em;
+}
+
+#header{
+    font-size: 4em;
+}
+
+#leftBox, #rightBox{
     display: flex;
+    justify-content: right;
+    width: 25%;
+}
+
+#mainContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pickerLabel{
+    height: 100%;
+    width: 100%;
+}
+
+#sizingElements{
+    align-items: center;
+    border-color: black;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+
 }
