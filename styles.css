@@ -63,6 +63,9 @@ body{
     box-shadow: 0 5px 15px rgba(170, 3, 3, 0.7);
     scale: 1.2;   
 }
+.footer{
+    flex: 1 1 auto;
+}
 
 .gridContainer{
     background-color: rgb(145, 142, 142);
@@ -92,6 +95,7 @@ body{
 }
 
 .header{
+    flex: 1 1 auto;
     font-size: 4em;
 }
 
@@ -103,13 +107,14 @@ body{
 .leftBox, .rightBox{
     align-items: center;
     display: flex;
+    flex: 1 1 auto;
     width: 25%;
 }
 
 .midBox{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .pickerLabel{
