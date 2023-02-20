@@ -4,7 +4,8 @@ const gridSizeLabel = document.getElementById("gridSizeLabel");
 const redrawGridButton = document.getElementById("redrawGrid");
 const colorButtons = document.querySelectorAll(".colorButton");
 const colorPicker = document.getElementById("colorPicker");
-const colorPickerLabel = document.getElementById("pickerLabel");
+const colorSwatch = document.getElementById("colorSwatch");
+const footer = document.getElementById("footer");
 let gridSize = 16;
 let colorChoice = "blackPen"
 
@@ -15,7 +16,7 @@ gridContainer.onmousedown = (e) => {
 }
 gridContainer.onmouseup = () => (mouseDown = false)
 
-pickerLabel.style.backgroundColor = `${colorPicker.value}`;
+colorSwatch.style.backgroundColor = `${colorPicker.value}`;
     
 gridSizeSlider.addEventListener("change" , (e)=> {
     gridSize = e.target.value;
@@ -36,7 +37,7 @@ colorPicker.addEventListener("click" , (e)=> {
 });
 
 colorPicker.addEventListener("change" , (e)=> {
-    pickerLabel.style.backgroundColor = `${colorPicker.value}`;
+    colorSwatch.style.backgroundColor = `${colorPicker.value}`;
 });
 
 colorButtons.forEach(btn => btn.addEventListener("click" , (e)=> {
@@ -75,4 +76,6 @@ function randNum(){
 }
 
 buildGrid(gridSize);
+        
+footer.innerText = `Copyright © ${new Date().getFullYear()} KHetherington89`;
 

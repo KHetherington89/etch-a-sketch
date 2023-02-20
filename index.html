@@ -5,35 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-A-Sketch</title>
-    <link rel = "stylesheet" href = "styles.css">
+    <link rel= "stylesheet" href = "styles.css">
+    <script src="etch-a-sketch.js" defer></script>
 </head>
 <body>
-    <div class ="contentBox" id="leftBox">
-        <div class ="contentBox controlBox" id="leftControls">
-            <div id="sizingElements">
-                <p id="gridSizeLabel">16 x 16</p>
-                <input type="range" min="1" max="100" value="16" id="gridSize">
-                <a class="fauxButton" id="redrawGrid">New Grid</a>
+    <div class="contentBox leftBox" id="leftBox"><!-- 
+        <div class="contentBox controlBox" id="leftControls"> -->
+            <div class="colorElements" id="colorElements">
+                <a class="colorButton cbActive" id="blackPen">Black Pen</a>
+                <a class="colorButton" id="rainbowPen">Rainbow Pen</a>
+                <a class="colorButton" id="eraserPen">Eraser</a>
+                <label type="label" for="colorPicker" class="colorButton" id="pickerLabel">Custom Color</label>
+                <input type="color" value="#FF0000" id="colorPicker">
+                <div class="colorSwatch" id="colorSwatch"></div>
             </div>
-            <a class="colorButton cbActive fauxButton" id="blackPen">Black Pen</a>
-            <a class="colorButton fauxButton" id="rainbowPen">Rainbow Pen</a>
-            <a class="colorButton fauxButton" id="eraserPen">Eraser</a>
-            <label type="label" for="colorPicker" class="colorButton" id="pickerLabel">Custom Color</label>
-            <input type="color" value="#FF0000" id="colorPicker">
-            <a class="fauxButton" id="toggleGrid">Toggle Lines</a> 
-        </div>           
+        <!-- </div>  -->          
     </div>  
-    <div class ="contentBox" id="mainContent">
-        <div class ="contentBox" id="header">Etch-A-Sketch</div>        
-        <div class ="contentBox gridActive" id="gridContainer"></div> 
-        <div class ="contentBox" id="footer">        
-            Copyright ©
-            <script>
-              document.write(new Date().getFullYear())
-            </script>
-            KHetherington89</div>
+    <div class="contentBox midBox" id="midBox">
+        <div class="contentBox header" id="header">Etch-A-Sketch</div>        
+        <div class="contentBox gridContainer gridActive" id="gridContainer"></div> 
+        <div class="contentBox footer" id="footer"></div>
     </div>
-    <div class ="contentBox" id="rightBox"></div>   
-    <script src="etch-a-sketch.js"></script>
+    <div class="contentBox rightBox" id="rightBox">
+        <div class="sizingElements" id="sizingElements">
+            <p class="gridSizeLabel" id="gridSizeLabel">16 x 16</p>
+            <input type="range" min="1" max="100" value="16" id="gridSize">
+            <a class="fauxButton" id="redrawGrid">New Grid</a>
+            <a class="fauxButton" id="toggleGrid">Toggle Lines</a> 
+        </div>
+    </div>   
+    
 </body>
 </html>
