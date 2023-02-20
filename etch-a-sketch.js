@@ -78,6 +78,6 @@ function randNum(){
 
 buildGrid(gridSize);
         
-footer.innerHTML = `Copyright © ${new Date().getFullYear()} KHetherington89 
-<a href="https://github.com/KHetherington89/etch-a-sketch"><i class="fa fa-github" style="font-size:24p; color:black"></i></a>`;
+footer.innerHTML = `<a style="color:black; text-decoration:none" href="https://github.com/KHetherington89/etch-a-sketch">Copyright © ${new Date().getFullYear()} KHetherington89 
+<i class="fa fa-github" style="font-size:24p; color:black"></i></a>`;
 
