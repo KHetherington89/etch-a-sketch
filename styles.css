@@ -5,10 +5,10 @@
 }
 
 body{
-    align-content: center;
+    align-items: center;
     background-color: rgb(197, 192, 184);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     text-align: center;
 }
 
@@ -33,7 +33,7 @@ body{
 }
 
 .contentBox{
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 .controlBox{
@@ -45,7 +45,7 @@ body{
 
 .fauxButton, .colorButton{
     align-items: center;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(214, 214, 214);
     border-color: rgb(0, 0, 0);
     border-radius: 30%;
     border-style: ridge;
@@ -97,8 +97,8 @@ body{
 .header{
     flex: 1 1 auto;
     font-size: 4em;
+    text-shadow: 3px 3px 3px rgb(170, 3, 3);
 }
-
 
 .leftBox{
     justify-content: right;    
@@ -107,14 +107,12 @@ body{
 .leftBox, .rightBox{
     align-items: center;
     display: flex;
-    flex: 1 1 auto;
-    width: 25%;
 }
 
-.midBox{
+.mainContent{
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .pickerLabel{
@@ -128,10 +126,12 @@ body{
 
 .sizingElements, .colorElements{
     align-items: center;
+    background-color: rgb(255, 255, 255);
     border-color: black;
     border-radius: 10px;
     border-style: solid;
     border-width: 3px;
+    
     display: flex;
     flex-direction: column;
     height: 500px;
