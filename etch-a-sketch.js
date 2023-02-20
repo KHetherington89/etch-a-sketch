@@ -14,7 +14,8 @@ gridContainer.onmousedown = (e) => {
     mouseDown = true;
     e.preventDefault();
 }
-gridContainer.onmouseup = () => (mouseDown = false)
+gridContainer.onmouseup = () => (mouseDown = false);
+gridContainer.onmouseleave = () => (mouseDown = false);
 
 colorSwatch.style.backgroundColor = `${colorPicker.value}`;
     
@@ -77,5 +78,6 @@ function randNum(){
 
 buildGrid(gridSize);
         
-footer.innerText = `Copyright © ${new Date().getFullYear()} KHetherington89`;
+footer.innerHTML = `Copyright © ${new Date().getFullYear()} KHetherington89 
+<a href="https://github.com/KHetherington89/etch-a-sketch"><i class="fa fa-github" style="font-size:24p; color:black"></i></a>`;
 
